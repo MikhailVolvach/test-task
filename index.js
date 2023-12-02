@@ -60,8 +60,6 @@ requestButton.addEventListener('click', (e) => {
             cassetteNodeQuantity.innerText = cassette.quantity;
             cassetteNode.querySelector('.taken').innerText = cassette.taken;
         }
-    } else {
-        machine.restoreCassettes();
     }
 
     requestResult.querySelector('.result').innerText = result ? 'Выдано' : 'Отказано';

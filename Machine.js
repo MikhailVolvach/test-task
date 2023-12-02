@@ -15,16 +15,6 @@ export default class Machine {
         this.#cassettesAmount = 0;
     }
 
-    restoreCassettes() {
-        for (let key of Object.keys(this.#cassettesMap)) {
-            for (let cassetteObj of this.#cassettesMap[key]) {
-                if (cassetteObj.cassette.taken) {
-                    cassetteObj.cassette.restore();
-                }
-            }
-        }
-    }
-
     get cassettes() {
         return this.#cassettesMap;
     }

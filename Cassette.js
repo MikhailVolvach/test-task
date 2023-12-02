@@ -58,11 +58,6 @@ export default class Cassette {
         return this.#value * amount;
     }
 
-    restore() {
-        this.#quantity += this.#taken;
-        this.#taken = 0;
-    }
-
     getHTML() {
         return `<li class="cassettes__cassette cassette" data-id=${this.#id} data-value=${this.#value}>
             <div class="cassette__id">ID кассеты: <span class="id">${this.#id}</span></div>
