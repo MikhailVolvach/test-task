@@ -29,7 +29,11 @@ export default class Machine {
             return '';
         }
         if (!(String(value) in this.#cassettesMap)) {
-            console.error("Неверное значение кассеты");
+            console.error("Неверный номинал кассеты");
+            return '';
+        }
+        if (quantity < 0) {
+            console.error("Количество купюр в кассете не может быть отрицательным");
             return '';
         }
         this.#cassettesAmount++
