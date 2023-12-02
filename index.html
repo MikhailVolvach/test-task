@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app">
+    <div class="container">
+        <div class="cassette-form">
+            <label class="cassette-form__value">Номинал: <input type="number" name="value"></label>
+            <label class="cassette-form__quantity">Количество купюр: <input type="number" name="quantity"></label>
+            <label class="cassette-form__status">Исправность кассеты: <input type="checkbox" checked></label>
+            <button class="cassette-form__add" data-action="add">Добавить</button>
+        </div>
+        <div class="request">
+            <label class="request__input">
+                Введите сумму
+                <input type="number">
+            </label>
+            <button class="request__send">Вычислить</button>
+            <div class="request__result">
+                Результат: <span class="result"></span>
+                Время: <span class="time"></span> мс
+            </div>
+            <ul class="request__cassettes request-cassettes"></ul>
+        </div>
+        <ul class="cassettes">
+        </ul>
+    </div>
+</main>
+<script type="module" src="index.js"></script>
+</body>
+</html>

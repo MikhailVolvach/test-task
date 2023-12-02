@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    font-family: Roboto, monospace;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.cassette-form {
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    grid-column: 1/2;
+}
+
+.cassette-form__quantity input,
+.cassette-form__value input {
+    width: 100%;
+}
+
+.cassettes {
+    grid-column: 3/4;
+    list-style: none;
+}
+
+.cassettes__cassette {
+    width: 100%;
+}
+
+.cassette {
+    margin-bottom: 10px;
+}
+
+.request {
+    grid-column: 2/3;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.request__input input {
+    width: 100%;
+}
