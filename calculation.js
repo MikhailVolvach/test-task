@@ -8,15 +8,19 @@ export default function calculation(reqSum, machine) {
             break;
         }
 
-        let amount = Math.floor(reqSum / key);
-        if (amount === 0) {
+        if (Math.floor(reqSum / key) === 0) {
             continue;
         }
 
         for (let cassetteObj of machine.cassettes[key]) {
+            if (cassetteObj.cassette.quantity === 0) {
+                continue;
+            }
             if (reqSum <= 0) {
                 break;
             }
+
+            let amount = Math.floor(reqSum / key);
 
             if (cassetteObj.cassette.quantity < amount) {
                 amount = cassetteObj.cassette.quantity;
