@@ -8,9 +8,9 @@ export default function calculation(reqSum, machine) {
         if (machine.cassettes[key].length) {
             cassettesDataCopy[key] = []
             for (const cassetteObj of machine.cassettes[key]) {
+                if (!cassetteObj.cassette.quantity) continue;
                 cassettesDataCopy[key].push({id: cassetteObj.id, quantity: cassetteObj.cassette.quantity, taken: cassetteObj.cassette.taken});
             }
-            // cassettesCopy[key] = machine.cassettes[key];
         }
     }
 
@@ -47,18 +47,6 @@ export default function calculation(reqSum, machine) {
 
     // В случае если денег оказалось недостаточно, нужно восстановить количество купюр в кассетах
     if (reqSum !== 0) {
-        // for (let key of Object.keys(machine.cassettes)) {
-        //     for (const cassetteObj of machine.cassettes[key]) {
-        //         const id = cassetteObj.id;
-        //         const cassette = cassetteObj.cassette;
-        //         const cassetteCopy = cassettesCopy[key].find(el => el.id === id);
-        //
-        //         if (cassette.quantity === cassetteCopy.quantity && cassette.taken === cassetteCopy.taken) continue;
-        //
-        //         cassette.quantity = cassetteCopy.quantity;
-        //         cassette.taken = cassetteCopy.taken;
-        //     }
-        // }
         for (let key of Object.keys(cassettesDataCopy)) {
             for (const cassetteCopyObj of cassettesDataCopy[key]) {
                 const id = cassetteCopyObj.id;
