@@ -40,6 +40,18 @@ export default class Cassette {
         return this.#taken;
     }
 
+    set quantity(newQuantity) {
+        if (typeof newQuantity !== 'number') return;
+        if (newQuantity < 0) return;
+        this.#quantity = newQuantity;
+    }
+
+    set taken(newTaken) {
+        if (typeof newTaken !== 'number') return;
+        if (newTaken < 0) return;
+        this.#taken = newTaken;
+    }
+
     sendMoney(amount) {
         if (typeof amount !== 'number') {
             console.error("Неверный тип");
